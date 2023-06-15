@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Mazzard';
+    src: local('Mazzard H SemiBold'), local('Mazzard-H-SemiBold'),
+        url('MazzardH-SemiBold.woff2') format('woff2'),
+        url('MazzardH-SemiBold.woff') format('woff'),
+        url('MazzardH-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
