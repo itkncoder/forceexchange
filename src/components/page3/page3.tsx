@@ -1,8 +1,6 @@
 import { Box, Button, CircularProgress, Input, Text } from "@chakra-ui/react"
 import Image from "next/image"
 import qr from "@/assets/qr.svg"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCopy } from "@fortawesome/free-solid-svg-icons"
 import { CopyIcon } from "@chakra-ui/icons"
 
 const Page3 = () => {
