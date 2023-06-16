@@ -1,6 +1,20 @@
 import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import { ChakraProvider } from '@chakra-ui/react'
+import { createContext, useState } from 'react';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+const Context = createContext<any>(null)
+
+function App({ Component, pageProps }: any) {
+
+    const [modalNow, setModalNow] = useState(0)
+
+    return (
+        <Context.Provider value={{modalNow, setModalNow}}>
+            <ChakraProvider>
+                <Component {...pageProps} />
+            </ChakraProvider>
+        </Context.Provider>
+    )
 }
+
+export default App;
