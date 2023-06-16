@@ -2,8 +2,17 @@ import { Box, Button, CircularProgress, Input, Text } from "@chakra-ui/react"
 import Image from "next/image"
 import qr from "@/assets/qr.svg"
 import { CopyIcon } from "@chakra-ui/icons"
+import { useContext } from "react"
+import { Context } from "@/pages/_app"
 
 const Page3 = () => {
+
+    const { setModalNow } = useContext(Context)
+
+    const nextModal = () => {
+        setModalNow(3)
+    }
+
     return (
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"} w={"100%"}  >
 
@@ -49,7 +58,7 @@ const Page3 = () => {
                 </Box>
 
                 <Box mt={"15px"} display={"flex"} justifyContent={"center"} w={"100%"}>
-                    <Button _hover={{bg: "#1a233b"}} rounded={"15px"} px={"150px"} bg={"#232d45"} height={"fit-content"} pb={"15px"} pt={"20px"} color={"white"} fontSize={"18px"} >To’lov qildim</Button>
+                    <Button onClick={nextModal} _hover={{bg: "#1a233b"}} rounded={"15px"} px={"150px"} bg={"#232d45"} height={"fit-content"} pb={"15px"} pt={"20px"} color={"white"} fontSize={"18px"} >To’lov qildim</Button>
                 </Box>
 
             </Box>

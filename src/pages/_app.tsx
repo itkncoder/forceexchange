@@ -2,7 +2,7 @@ import '@/styles/globals.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import { createContext, useState } from 'react';
 
-const Context = createContext<any>(null)
+export const Context = createContext<any>(null)
 
 function App({ Component, pageProps }: any) {
 

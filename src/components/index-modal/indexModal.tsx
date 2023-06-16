@@ -4,8 +4,17 @@ import tether from "@/assets/tether.svg"
 import sum from "@/assets/sum.svg"
 import repeat from "@/assets/repeat.svg"
 import angledown from "@/assets/angledown.svg"
+import { useContext } from "react"
+import { Context } from "@/pages/_app"
 
 const IndexModal = () => {
+
+    const { setModalNow } = useContext(Context)
+
+    const nextModal = () => {
+        setModalNow(1)
+    }
+
     return (
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"} w={"100%"}  >
             <Box display={"flex"} flexDirection={"column"} gap={"15px"} justifyContent={"center"} alignItems={"center"} maxW={"600px"} w={"100%"} shadow={"2xl"} py={"30px"} rounded={"25px"} px={"25px"} bg={"#1b1d27"}>
@@ -44,7 +53,7 @@ const IndexModal = () => {
                 </Box>
 
                 <Box mt={"5px"} w={"100%"}>
-                    <Button _hover={{bg: "#1a233b"}} rounded={"15px"} w={"100%"} bg={"#232d45"} height={"fit-content"} pb={"15px"} pt={"20px"} color={"white"} fontSize={"18px"} >Sotib olish</Button>
+                    <Button _hover={{bg: "#1a233b"}} rounded={"15px"} w={"100%"} bg={"#232d45"} height={"fit-content"} pb={"15px"} pt={"20px"} color={"white"} fontSize={"18px"} onClick={nextModal} >Sotib olish</Button>
                 </Box>
 
             </Box>

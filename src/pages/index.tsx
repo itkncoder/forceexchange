@@ -7,8 +7,12 @@ import Page4 from "@/components/page4/page4"
 import Layout from "@/layout/layout"
 import { Box, Button, Text } from "@chakra-ui/react"
 import Head from "next/head"
+import { useContext } from "react"
+import { Context } from "./_app"
 
 const Index = () => {
+
+    const { modalNow } = useContext(Context)
 
     return (
         <Layout>
@@ -20,10 +24,10 @@ const Index = () => {
                     <Navbar/>
                     <Box>
                         <Box display={"flex"} justifyContent={"center"} alignItems={"center"} h={"100vh"} >
-                            <IndexModal />
-                            {/* <Page2/> */}
-                            {/* <Page3/> */}
-                            {/* <Page4/> */}
+                            { modalNow === 0 && <IndexModal />}
+                            { modalNow === 1 && <Page2/>}
+                            { modalNow === 2 && <Page3/>}
+                            { modalNow === 3 && <Page4/>}
                         </Box>
                     </Box>
                     <Footer/>

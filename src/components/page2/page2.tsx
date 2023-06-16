@@ -1,8 +1,17 @@
 import { Box, Button, CircularProgress, Input, Text } from "@chakra-ui/react"
 import Image from "next/image"
 import humo from "@/assets/humo.svg"
+import { useContext } from "react"
+import { Context } from "@/pages/_app"
 
 const Page2 = () => {
+
+    const { setModalNow } = useContext(Context)
+
+    const nextModal = () => {
+        setModalNow(2)
+    }
+
     return (
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"} w={"100%"}  >
             
@@ -50,7 +59,7 @@ const Page2 = () => {
                 </Box>
 
                 <Box mt={"15px"} display={"flex"} justifyContent={"center"} w={"100%"}>
-                    <Button _hover={{bg: "#1a233b"}} rounded={"15px"} px={"150px"} bg={"#232d45"} height={"fit-content"} pb={"15px"} pt={"20px"} color={"white"} fontSize={"18px"} >To’lov qilish</Button>
+                    <Button onClick={nextModal} _hover={{bg: "#1a233b"}} rounded={"15px"} px={"150px"} bg={"#232d45"} height={"fit-content"} pb={"15px"} pt={"20px"} color={"white"} fontSize={"18px"} >To’lov qilish</Button>
                 </Box>
 
             </Box>
