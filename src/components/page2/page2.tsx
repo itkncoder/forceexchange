@@ -3,6 +3,7 @@ import Image from "next/image"
 import humo from "@/assets/humo.svg"
 import { useContext } from "react"
 import { Context } from "@/pages/_app"
+import { ChevronLeftIcon, CloseIcon } from "@chakra-ui/icons"
 
 const Page2 = () => {
 
@@ -12,6 +13,10 @@ const Page2 = () => {
         setModalNow(2)
     }
 
+    const prevModal = () => {
+        setModalNow((prev: number) => prev - 1)
+    }
+
     return (
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"} w={"100%"}  >
             
@@ -19,7 +24,11 @@ const Page2 = () => {
 
             <Box position={"relative"} zIndex={"3"} display={"flex"} flexDirection={"column"} gap={"15px"} justifyContent={"center"} alignItems={"center"} maxW={"600px"} w={"100%"} shadow={"2xl"} py={"30px"} rounded={"25px"} px={"25px"} bg={"#1b1d27"}>
 
-                <Box w={"100%"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} >
+                <Box onClick={prevModal} border={"1px solid #1a1a1a"} position={"absolute"} cursor={"pointer"} _hover={{bg: "rgba(0, 0, 0, 0.2)"}} bg={"rgba(0, 0, 0, 0.1)"} display={"flex"} justifyContent={"center"} alignItems={"center"} w={"35px"} h={"35px"} rounded={"8px"} top={"15px"} left={"20px"} >
+                    <CloseIcon fontSize={"14px"} />
+                </Box>
+
+                <Box pt={"30px"} w={"100%"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} >
                     <Box>
                         <Text fontSize={"18px"} >No: #121406</Text>
                         <Text color={"#7e90ba"} >15 iyun 2023. 16:40</Text>

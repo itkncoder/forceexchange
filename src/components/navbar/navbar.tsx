@@ -32,7 +32,7 @@ const NavbarItem = ({title, verify, link}: INavbarItem) => {
 
 const Navbar = () => {
     return (
-        <Box position={"absolute"} w={"100%"} left={"0"} top={"0"} py={"75px"} >
+        <Box position={"absolute"} w={"100%"} left={"0"} top={"0"} py={"60px"} >
             <Box display={"flex"} justifyContent={"space-between"} alignItems={"center"} >
                 <Box display={"flex"} alignItems={"center"} gap={"75px"} >
                     <Link href={"/"}>

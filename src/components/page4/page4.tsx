@@ -1,14 +1,27 @@
 import { Box, Button, CircularProgress, Text } from "@chakra-ui/react"
 import Image from "next/image"
-import { CopyIcon } from "@chakra-ui/icons"
+import { ChevronLeftIcon, CopyIcon } from "@chakra-ui/icons"
+import { useContext } from "react"
+import { Context } from "@/pages/_app"
 
 const Page4 = () => {
+
+    const { setModalNow } = useContext(Context)
+
+    const prevModal = () => {
+        setModalNow((prev: number) => prev - 1)
+    }
+
     return (
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"} w={"100%"}  >
 
             <Box w={"100%"} height={"100vh"} zIndex={1} className="filter" position={"fixed"} left={"0"} top={"0"} bg={"rgba(0, 0, 0, 0.5)"} ></Box>
 
             <Box position={"relative"} zIndex={"3"} display={"flex"} flexDirection={"column"} gap={"10px"} justifyContent={"center"} alignItems={"center"} maxW={"600px"} w={"100%"} shadow={"2xl"} py={"30px"} rounded={"25px"} px={"25px"} bg={"#1b1d27"}>
+
+                <Box onClick={prevModal} border={"1px solid #1a1a1a"} position={"absolute"} cursor={"pointer"} _hover={{bg: "rgba(0, 0, 0, 0.2)"}} bg={"rgba(0, 0, 0, 0.1)"} display={"flex"} justifyContent={"center"} alignItems={"center"} w={"35px"} h={"35px"} rounded={"8px"} top={"15px"} left={"20px"} >
+                    <ChevronLeftIcon fontSize={"24px"} />
+                </Box>
 
                 <Box w={"100%"} display={"flex"} justifyContent={"end"} alignItems={"center"} >
                     <Box display={"flex"} justifyContent={"start"} alignItems={"center"} gap={"15px"} >
