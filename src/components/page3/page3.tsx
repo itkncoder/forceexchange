@@ -10,11 +10,11 @@ const Page3 = () => {
     const { setModalNow } = useContext(Context)
 
     const nextModal = () => {
-        setModalNow(3)
+        setModalNow((prev: number) => prev + 1)
     }
 
     const prevModal = () => {
-        setModalNow((prev: number) => prev - 1)
+        setModalNow((prev: number) => prev - 2)
     }
 
     return (

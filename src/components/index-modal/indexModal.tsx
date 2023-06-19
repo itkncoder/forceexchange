@@ -15,7 +15,7 @@ const IndexModal = () => {
     const [fromTo, setFromTo] = useState<boolean>(true)
 
     const nextModal = () => {
-        setModalNow(1)
+        setModalNow((prev: number) => prev + 1)
     }
 
     return (
