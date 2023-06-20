@@ -14,7 +14,7 @@ const Page3 = () => {
     }
 
     const prevModal = () => {
-        setModalNow((prev: number) => prev - 2)
+        setModalNow((prev: number) => prev - 1)
     }
 
     return (
