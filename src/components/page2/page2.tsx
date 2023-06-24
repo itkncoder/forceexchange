@@ -4,6 +4,7 @@ import humo from "@/assets/humo.svg"
 import { useContext } from "react"
 import { Context } from "@/pages/_app"
 import { ChevronLeftIcon, CloseIcon } from "@chakra-ui/icons"
+import Progress from "../progress/progress"
 
 const Page2 = () => {
 
@@ -33,29 +34,23 @@ const Page2 = () => {
                         <Text fontSize={"18px"} >No: #121406</Text>
                         <Text color={"#7e90ba"} >15 iyun 2023. 16:40</Text>
                     </Box>
-                    <Box display={"flex"} justifyContent={"start"} alignItems={"center"} gap={"15px"} >
-                        <Box display={"flex"} flexDirection={"column"} alignItems={"end"} >
-                            <Text fontSize={"18px"}>Qolgan vaqt:</Text>
-                            <Text color={"#7e90ba"} >29:15</Text>
-                        </Box>
-                        <CircularProgress trackColor="transparent" value={70} color='#0066CC' thickness='12px' />
-                    </Box>
+                    <Progress/>
                 </Box>
 
                 <Box mt={"15px"} w={"100%"} maxW={"580px"} position={"relative"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} px={"20px"} py={"15px"} bg={"#0f1117"} rounded={"25px"}>
                     <Box display={"flex"} justifyContent={"start"} alignItems={"center"} gap={"15px"} >
                         <Image style={{width: "50px", height: "auto"}} width={100} height={100} alt="humo" src={humo} />
-                        <Text fontSize={"26px"} >Humo</Text>
+                        <Text fontSize={"24px"} >Humo</Text>
                     </Box>
                     <Box>
-                        <Text color={"#7e90ba"} fontSize={"22px"}>11 420 320.50 so'm</Text>
+                        <Text color={"#7e90ba"} fontSize={"20px"}>11 420 320.50 so'm</Text>
                     </Box>
                 </Box>
 
                 <Box mt={"8px"} w={"100%"} display={"flex"} flexDirection={"column"} alignItems={"start"} gap={"15px"} >
                     <Box w={"100%"} >
-                        <Text color={"#7e90ba"} >Karta raqam:</Text>
-                        <Input type="number" mt={"5px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}} variant={"filled"} placeholder="Karta raqamingiz..." />
+                        <Text color={"#7e90ba"} >TRC-20 Address yoki Binance PayID:</Text>
+                        <Input mt={"5px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}} variant={"filled"} placeholder="TRC-20 Address yoki Binance PayID..." />
                     </Box>
                     <Box w={"100%"} >
                         <Text color={"#7e90ba"} >Ism Familiya:</Text>

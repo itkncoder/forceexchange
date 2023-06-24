@@ -1,12 +1,15 @@
-import { Box, Button, CircularProgress, Text } from "@chakra-ui/react"
+import { Box, Button, CircularProgress, Text, useToast } from "@chakra-ui/react"
 import Image from "next/image"
 import { ChevronLeftIcon, CopyIcon } from "@chakra-ui/icons"
 import { useContext } from "react"
 import { Context } from "@/pages/_app"
+import Progress from "../progress/progress"
 
 const Page4 = () => {
 
     const { setModalNow } = useContext(Context)
+
+    const toast = useToast()
 
     const prevModal = () => {
         setModalNow((prev: number) => prev - 2)
@@ -24,13 +27,7 @@ const Page4 = () => {
                 </Box>
 
                 <Box w={"100%"} display={"flex"} justifyContent={"end"} alignItems={"center"} >
-                    <Box display={"flex"} justifyContent={"start"} alignItems={"center"} gap={"15px"} >
-                        <Box display={"flex"} flexDirection={"column"} alignItems={"end"} >
-                            <Text fontSize={"18px"}>Qolgan vaqt:</Text>
-                            <Text color={"#7e90ba"} >29:15</Text>
-                        </Box>
-                        <CircularProgress trackColor="transparent" value={70} color='#0066CC' thickness='12px' />
-                    </Box>
+                    <Progress/>
                 </Box>
 
                 <Box w={"100%"} maxW={"380px"}>
@@ -51,7 +48,18 @@ const Page4 = () => {
                     <Box w={"100%"} >
                         <Box w={"100%"} >
                             <Text color={"#7e90ba"} >Karta raqam:</Text>
-                            <Text px={"20px"} mt={"2px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}}>9860 2210 5877 5270 <span><CopyIcon cursor={"pointer"} mx={"10px"} color={"#7e90ba"} /></span> </Text>
+                            <Text px={"20px"} mt={"2px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}}>9860 2210 5877 5270 <span><CopyIcon onClick={() => {
+                                navigator.clipboard.writeText("9860 2210 5877 5270")
+                                toast({
+                                    title: 'Copied 9860 2210 5877 5270',
+                                    status: 'info',
+                                    variant: "solid",
+                                    position: "top",
+                                    colorScheme: "dark",
+                                    duration: 2000,
+                                    isClosable: true,
+                                })
+                            }} cursor={"pointer"} mx={"10px"} color={"#7e90ba"} /></span> </Text>
                         </Box>
                         <Box mt={"15px"} w={"100%"} >
                             <Text px={"20px"} mt={"2px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}}>Abdullayev Feruz</Text>

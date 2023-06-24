@@ -1,6 +1,6 @@
 import { Box, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, Text } from "@chakra-ui/react"
 import Image from "next/image"
-import tether from "@/assets/tether.svg"
+import tether from "@/assets/tether.png"
 import angledown from "@/assets/angledown.svg"
 
 const Usdt = ({changer, onTop}: {changer: any, onTop?: boolean}) => {

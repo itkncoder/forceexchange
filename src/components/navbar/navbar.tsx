@@ -14,11 +14,11 @@ interface INavbarItem {
 const NavbarItem = ({title, verify, link}: INavbarItem) => {
     return (
         <Box>
-            <Link href={link}>
+            <Link target={"_blank"} href={link}>
                 <Box display={"flex"} justifyContent={"start"} alignItems={"center"} gap={"8px"}>
                     <Text _hover={{color: "#b7b7b7"}} fontSize={"20px"} >{title}</Text>
                     {
-                        verify 
+                        verify
                         &&
                         <Box>
                             <Image style={{width: "20px", height: "auto", paddingBottom: "3px"}} width={100} height={100} alt='verify' priority src={verifyImg} />
@@ -41,7 +41,7 @@ const Navbar = () => {
                     <Box display={"flex"} justifyContent={"start"} alignItems={"center"} gap={"35px"} >
                         <NavbarItem link={"/qoidalar"} title={"Qoidalar"} />
                         <NavbarItem link={"/qollanma"} title={"Qo'llanma"} />
-                        <NavbarItem link={"/operator"} title={"Operator"} verify />
+                        <NavbarItem link={"https://t.me/Feruz_769"} title={"Operator"} verify />
                     </Box>
                 </Box>
                 <Box display={"flex"} justifyContent={"start"} alignItems={"center"} gap={"40px"} >

@@ -1,6 +1,6 @@
 import { Box, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, Text } from "@chakra-ui/react"
 import Image from "next/image"
-import sum from "@/assets/sum.svg"
+import sum from "@/assets/sum.png"
 import angledown from "@/assets/angledown.svg"
 
 const Sum = ({changer, onTop}: {changer: any, onTop?: boolean}) => {

@@ -12,7 +12,7 @@ import Sum from "./sum"
 const IndexModal = () => {
 
     const { setModalNow } = useContext(Context)
-    const [fromTo, setFromTo] = useState<boolean>(true)
+    const [fromTo, setFromTo] = useState<boolean>(false)
 
     const nextModal = () => {
         setModalNow((prev: number) => prev + 1)
@@ -37,7 +37,7 @@ const IndexModal = () => {
                 }
 
                 <Box mt={"5px"} w={"100%"} maxW={"580px"} position={"relative"} gap={"15px"} display={"flex"} justifyContent={"start"} alignItems={"center"} px={"35px"} py={"15px"} bg={"#0f1117"} rounded={"15px"}>
-                    <Image style={{width: "25px", height: "auto"}} width={100} height={100} alt="repeat" src={repeat} />
+                    <Image style={{width: "27.5px", height: "auto"}} width={150} height={150} alt="repeat" src={repeat} />
                     <Text fontSize={"18px"} >1 USDT <span style={{color: "#7e90ba", padding: "0 5px"}} >=</span> 11 250 SO'M</Text>
                 </Box>
 
