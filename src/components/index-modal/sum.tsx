@@ -25,7 +25,7 @@ const Sum = ({changer, onTop}: {changer: any, onTop?: boolean}) => {
                 onTop
                 ?
                 <Box display={"flex"} justifyContent={"end"} > 
-                    <NumberInput value={Number(sum).toLocaleString()} onChange={(e: any) => setSum(e)} variant={"unstyled"} w={"315px"} min={0} >
+                    <NumberInput value={Number(sum).toLocaleString()} onChange={(e: any) => setSum(e)} variant={"unstyled"} min={0} >
                         <NumberInputField w={"fit-content"} px={"0"} mr={"0"} pl={"0"} placeholder="0" textAlign={"end"} border={"0"} _focus={{border: "0", outline: "0"}} _hover={{bg: "transparent"}} height={"fit-content"} pb={"8px"} pt={"10px"} fontSize={"24px"} />
                     </NumberInput>
                 </Box>
