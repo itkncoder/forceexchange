@@ -1,7 +1,7 @@
 import { Context } from "@/pages/_app"
 import { Box, CircularProgress, Text, useToast } from "@chakra-ui/react"
 import { useRouter } from "next/router"
-import { memo, useContext, useEffect, useState } from "react"
+import { memo, useContext, useEffect } from "react"
 
 const Progress = () => {
 
@@ -16,7 +16,7 @@ const Progress = () => {
             clearTimeout(time)
             setTimeout(() => {
                 router.reload()
-            }, 500)
+            }, 2000)
             toast({
                 title: 'Berilgan vaqt tugadi!',
                 status: 'error',

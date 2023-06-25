@@ -1,9 +1,6 @@
-import { Box, Button, Input, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, Text } from "@chakra-ui/react"
+import { Box, Button, Text } from "@chakra-ui/react"
 import Image from "next/image"
-import tether from "@/assets/tether.svg"
-import sum from "@/assets/sum.svg"
 import repeat from "@/assets/repeat.svg"
-import angledown from "@/assets/angledown.svg"
 import { useContext, useState } from "react"
 import { Context } from "@/pages/_app"
 import Usdt from "./usdt"
@@ -11,7 +8,7 @@ import Sum from "./sum"
 
 const IndexModal = () => {
 
-    const { setModalNow } = useContext(Context)
+    const { setModalNow, usdNow } = useContext(Context)
     const [fromTo, setFromTo] = useState<boolean>(false)
 
     const nextModal = () => {
@@ -38,7 +35,7 @@ const IndexModal = () => {
 
                 <Box mt={"5px"} w={"100%"} maxW={"580px"} position={"relative"} gap={"15px"} display={"flex"} justifyContent={"start"} alignItems={"center"} px={"35px"} py={"15px"} bg={"#0f1117"} rounded={"15px"}>
                     <Image style={{width: "27.5px", height: "auto"}} width={150} height={150} alt="repeat" src={repeat} />
-                    <Text fontSize={"18px"} >1 USDT <span style={{color: "#7e90ba", padding: "0 5px"}} >=</span> 11 250 SO'M</Text>
+                    <Text fontSize={"18px"} >1 USDT <span style={{color: "#7e90ba", padding: "0 5px"}} >=</span> {usdNow} SO'M</Text>
                 </Box>
 
                 <Box mt={"5px"} w={"100%"}>

@@ -2,8 +2,17 @@ import { Box, NumberDecrementStepper, NumberIncrementStepper, NumberInput, Numbe
 import Image from "next/image"
 import tether from "@/assets/tether.png"
 import angledown from "@/assets/angledown.svg"
+import { useContext, useEffect } from "react"
+import { Context } from "@/pages/_app"
 
 const Usdt = ({changer, onTop}: {changer: any, onTop?: boolean}) => {
+
+    const { usd, setUsd, usdResult, setSumResult, usdNow } = useContext(Context)
+
+    useEffect(() => {
+        setSumResult(Number(usd) * Number(usdNow))
+    }, [usd, usdNow])
+
     return (
         <Box w={"100%"} maxW={"580px"} position={"relative"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} px={"35px"} height={"130px"} bg={"#0f1117"} border={"2px solid transparent"} rounded={"25px"}>
 
@@ -16,13 +25,13 @@ const Usdt = ({changer, onTop}: {changer: any, onTop?: boolean}) => {
                 onTop
                 ?
                 <Box display={"flex"} justifyContent={"end"} > 
-                    <NumberInput mr={"0"} pl={"0"} variant={"unstyled"} w={"fit-content"} min={0} >
+                    <NumberInput value={usd} onChange={(e: any) => setUsd(e)} mr={"0"} pl={"0"} variant={"unstyled"} w={"fit-content"} min={0} >
                         <NumberInputField w={"fit-content"} px={"0"} mr={"0"} pl={"0"} placeholder="0" textAlign={"end"} border={"0"} _focus={{border: "0", outline: "0"}} _hover={{bg: "transparent"}} height={"fit-content"} pb={"8px"} pt={"10px"} fontSize={"20px"} />
                     </NumberInput>
                 </Box>
                 :
                 <Box>
-                    <Text fontSize={"24px"} >11 420 320.50</Text>
+                    <Text fontSize={"24px"} >{Number(usdResult).toLocaleString() ?? 0}</Text>
                 </Box>
             }
 
