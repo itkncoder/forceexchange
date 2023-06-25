@@ -14,7 +14,9 @@ const Progress = () => {
     useEffect(() => {
         if (timer > 225000 * 4 - 1500) {
             clearTimeout(time)
-            router.push("/")
+            setTimeout(() => {
+                router.reload()
+            }, 500)
             toast({
                 title: 'Berilgan vaqt tugadi!',
                 status: 'error',
