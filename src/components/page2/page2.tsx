@@ -1,6 +1,6 @@
 import { Box, Button, CircularProgress, Input, Text } from "@chakra-ui/react"
 import Image from "next/image"
-import humo from "@/assets/humo.svg"
+import tether from "@/assets/tether.png"
 import { useContext } from "react"
 import { Context } from "@/pages/_app"
 import { ChevronLeftIcon, CloseIcon } from "@chakra-ui/icons"
@@ -8,7 +8,11 @@ import Progress from "../progress/progress"
 
 const Page2 = () => {
 
-    const { setModalNow } = useContext(Context)
+    const monthNames = ["Yanvar", "Fevral", "Mart", "Aprel", "May", "Iyun",
+    "Iyul", "Avgust", "Sentyabr", "Oktyabr", "Noyabr", "Dekabr"
+    ]
+
+    const { setModalNow, usdResult, date } = useContext(Context)
 
     const nextModal = () => {
         setModalNow((prev: number) => prev + 2)
@@ -31,19 +35,19 @@ const Page2 = () => {
 
                 <Box pt={"30px"} w={"100%"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} >
                     <Box>
-                        <Text fontSize={"18px"} >No: #121406</Text>
-                        <Text color={"#7e90ba"} >15 iyun 2023. 16:40</Text>
+                        <Text fontSize={"18px"} >No: #{date.getTime().toString().slice(-6)}</Text>
+                        <Text color={"#7e90ba"} >{date.getDate()} {monthNames[date.getMonth()]} {date.getFullYear()}. {date.getHours()}:{date.getMinutes()}</Text>
                     </Box>
                     <Progress/>
                 </Box>
 
                 <Box mt={"15px"} w={"100%"} maxW={"580px"} position={"relative"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} px={"20px"} py={"15px"} bg={"#0f1117"} rounded={"25px"}>
                     <Box display={"flex"} justifyContent={"start"} alignItems={"center"} gap={"15px"} >
-                        <Image style={{width: "50px", height: "auto"}} width={100} height={100} alt="humo" src={humo} />
-                        <Text fontSize={"24px"} >Humo</Text>
+                        <Image style={{width: "50px", height: "auto"}} width={100} height={100} alt="humo" src={tether} />
+                        <Text fontSize={"24px"} >USDT</Text>
                     </Box>
                     <Box>
-                        <Text color={"#7e90ba"} fontSize={"20px"}>11 420 320.50 so'm</Text>
+                        <Text color={"#7e90ba"} fontSize={"22px"}>{Number(usdResult).toLocaleString()} USDT</Text>
                     </Box>
                 </Box>
 

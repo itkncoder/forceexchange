@@ -1,4 +1,4 @@
-import { Box, Button, Text } from "@chakra-ui/react"
+import { Box, Button, Skeleton, SkeletonCircle, SkeletonText, Text } from "@chakra-ui/react"
 import Image from "next/image"
 import repeat from "@/assets/repeat.svg"
 import { useContext, useState } from "react"
@@ -8,7 +8,7 @@ import Sum from "./sum"
 
 const IndexModal = () => {
 
-    const { setModalNow, usdNow } = useContext(Context)
+    const { setModalNow, usdNow, loaderUsd } = useContext(Context)
     const [fromTo, setFromTo] = useState<boolean>(false)
 
     const nextModal = () => {
@@ -23,6 +23,7 @@ const IndexModal = () => {
                     fromTo 
                     ?
                     <>
+                    
                         <Usdt onTop changer={setFromTo} />
                         <Sum changer={setFromTo} />
                     </>
@@ -34,8 +35,12 @@ const IndexModal = () => {
                 }
 
                 <Box mt={"5px"} w={"100%"} maxW={"580px"} position={"relative"} gap={"15px"} display={"flex"} justifyContent={"start"} alignItems={"center"} px={"35px"} py={"15px"} bg={"#0f1117"} rounded={"15px"}>
-                    <Image style={{width: "27.5px", height: "auto"}} width={150} height={150} alt="repeat" src={repeat} />
-                    <Text fontSize={"18px"} >1 USDT <span style={{color: "#7e90ba", padding: "0 5px"}} >=</span> {usdNow} SO'M</Text>
+                    <SkeletonCircle startColor="rgba(256, 256, 256, .1)" endColor="rgba(256, 256, 256, .2)" rounded={"7px"} isLoaded={loaderUsd}>
+                        <Image style={{width: "27.5px", height: "auto"}} width={150} height={150} alt="repeat" src={repeat} />
+                    </SkeletonCircle>
+                    <Skeleton startColor="rgba(256, 256, 256, .1)" endColor="rgba(256, 256, 256, .2)" rounded={"7px"} isLoaded={loaderUsd} w={"100%"}>
+                        <Text fontSize={"18px"} >1 USDT <span style={{color: "#7e90ba", padding: "0 5px"}} >=</span> {usdNow} SO'M</Text>
+                    </Skeleton>
                 </Box>
 
                 <Box mt={"5px"} w={"100%"}>

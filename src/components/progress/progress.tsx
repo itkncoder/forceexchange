@@ -16,7 +16,7 @@ const Progress = () => {
             clearTimeout(time)
             setTimeout(() => {
                 router.reload()
-            }, 2000)
+            }, 2500)
             toast({
                 title: 'Berilgan vaqt tugadi!',
                 status: 'error',
