@@ -25,13 +25,13 @@ const Usdt = ({changer, onTop}: {changer: any, onTop?: boolean}) => {
                 onTop
                 ?
                 <Box display={"flex"} justifyContent={"end"} > 
-                    <NumberInput value={usd} onChange={(e: any) => setUsd(e)} mr={"0"} pl={"0"} variant={"unstyled"} w={"fit-content"} min={0} >
+                    <NumberInput value={Number(usd).toLocaleString()} onChange={(e: any) => setUsd(e)} mr={"0"} pl={"0"} variant={"unstyled"} w={"fit-content"} min={0} >
                         <NumberInputField w={"fit-content"} px={"0"} mr={"0"} pl={"0"} placeholder="0" textAlign={"end"} border={"0"} _focus={{border: "0", outline: "0"}} _hover={{bg: "transparent"}} height={"fit-content"} pb={"8px"} pt={"10px"} fontSize={"20px"} />
                     </NumberInput>
                 </Box>
                 :
                 <Box>
-                    <Text fontSize={"24px"} >{Number(usdResult).toLocaleString() ?? 0}</Text>
+                    <Text fontSize={"24px"} >{Number(usdResult).toLocaleString() || 1}</Text>
                 </Box>
             }
 

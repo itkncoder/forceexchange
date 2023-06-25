@@ -9,11 +9,11 @@ function App({ Component, pageProps }: any) {
 
     const [usdNow, setUsdNow] = useState()
 
-    const [sum, setSum] = useState(0)
-    const [usd, setUsd] = useState(0)
+    const [sum, setSum] = useState()
+    const [usd, setUsd] = useState(1)
     
-    const [sumResult, setSumResult] = useState()
-    const [usdResult, setUsdResult] = useState()
+    const [sumResult, setSumResult] = useState(null)
+    const [usdResult, setUsdResult] = useState(null)
 
     const [modalNow, setModalNow] = useState(0)
 
@@ -34,6 +34,7 @@ function App({ Component, pageProps }: any) {
 
         axios.get("https://forceexchangebackend.onrender.com/api/price").then((res: any) => {
             setUsdNow(res.data.data[0].price)
+            setSum(res.data.data[0].price)
         })
 
     }, [])
