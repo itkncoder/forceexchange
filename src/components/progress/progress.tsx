@@ -1,22 +1,27 @@
 import { Context } from "@/pages/_app"
 import { Box, CircularProgress, Text, useToast } from "@chakra-ui/react"
+import { useRouter } from "next/router"
 import { memo, useContext, useEffect, useState } from "react"
 
 const Progress = () => {
 
-    const {timer, setTimer, setModalNow} = useContext(Context)
+    const router = useRouter()
+
+    const {timer, setTimer, setModalNow, time} = useContext(Context)
 
     const toast = useToast()
 
     useEffect(() => {
-        if (timer > 450000 * 4 - 2000) {
+        if (timer > 225000 * 4 - 1500) {
+            clearTimeout(time)
+            router.push("/")
             toast({
                 title: 'Berilgan vaqt tugadi!',
                 status: 'error',
                 variant: "solid",
                 position: "top",
                 colorScheme: "dark",
-                duration: 2000,
+                duration: 3000,
                 isClosable: true,
             })
             setModalNow(0)
@@ -27,9 +32,9 @@ const Progress = () => {
         <Box display={"flex"} justifyContent={"start"} alignItems={"center"} gap={"15px"}>
             <Box display={"flex"} flexDirection={"column"} alignItems={"end"}>
                 <Text fontSize={"18px"}>Qolgan vaqt:</Text>
-                <Text color={"#7e90ba"} >{29 - new Date(timer).getMinutes()}:{60 - new Date(timer).getSeconds()}</Text>
+                <Text color={"#7e90ba"} >{14 - new Date(timer).getMinutes()}:{60 - new Date(timer).getSeconds()}</Text>
             </Box>
-            <CircularProgress trackColor="transparent" value={timer} max={450000 * 4} color='#0066CC' thickness='12px'/>
+            <CircularProgress trackColor="transparent" value={timer} max={225000 * 4} color='#0066CC' thickness='12px'/>
         </Box>
     )
 }

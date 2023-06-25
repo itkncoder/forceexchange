@@ -10,6 +10,8 @@ function App({ Component, pageProps }: any) {
 
     const [modalNow, setModalNow] = useState(0)
 
+    const [time, setTime] = useState<NodeJS.Timeout>()
+
     const [timer, setTimer] = useState(0)
 
     useEffect(() => {
@@ -20,12 +22,14 @@ function App({ Component, pageProps }: any) {
 
         const timeout = setTimeout(() => {
             clearInterval(interval)
-        }, 2600000)
+        }, 10000000)
+
+        setTime(timeout)
 
     }, [])
 
     return (
-        <Context.Provider value={{modalNow, setModalNow, timer, setTimer}}>
+        <Context.Provider value={{modalNow, setModalNow, timer, setTimer, time}}>
             <ChakraProvider>
                 <Component {...pageProps} />
             </ChakraProvider>

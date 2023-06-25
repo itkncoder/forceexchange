@@ -28,38 +28,38 @@ const Adminpanelforceexchange = () => {
                             <Table variant='simple'>
                                 <Thead>
                                     <Tr>
-                                        <Th color={"#f1f1f1"} borderColor={"gray"} >UsdPrice</Th>
                                         <Th color={"#f1f1f1"} borderColor={"gray"} >Name</Th>
-                                        <Th color={"#f1f1f1"} borderColor={"gray"} >Address</Th>
                                         <Th color={"#f1f1f1"} borderColor={"gray"} >TelAndUsername</Th>
+                                        <Th color={"#f1f1f1"} borderColor={"gray"} >Address</Th>
+                                        <Th color={"#f1f1f1"} borderColor={"gray"} >UsdPrice</Th>
                                         <Th color={"#f1f1f1"} borderColor={"gray"} >UsdTotal</Th>
                                         <Th color={"#f1f1f1"} borderColor={"gray"} >UzsTotal</Th>
                                     </Tr>
                                 </Thead>
                                 <Tbody >
                                     <Tr>
-                                        <Td border={"0"}>UsdPrice</Td>
-                                        <Td border={"0"}>Name</Td>
-                                        <Td border={"0"}>Address</Td>
-                                        <Td border={"0"}>TelAndUsername</Td>
-                                        <Td border={"0"}>UsdTotal</Td>
-                                        <Td border={"0"}>UzsTotal</Td>
+                                        <Td border={"0"}>Nuriddin</Td>
+                                        <Td border={"0"}>@kncoder</Td>
+                                        <Td border={"0"}>Quva</Td>
+                                        <Td border={"0"}>195432</Td>
+                                        <Td border={"0"}>3485734</Td>
+                                        <Td border={"0"}>4375345</Td>
                                     </Tr>
                                     <Tr>
-                                        <Td border={"0"}>UsdPrice</Td>
-                                        <Td border={"0"}>Name</Td>
-                                        <Td border={"0"}>Address</Td>
-                                        <Td border={"0"}>TelAndUsername</Td>
-                                        <Td border={"0"}>UsdTotal</Td>
-                                        <Td border={"0"}>UzsTotal</Td>
+                                        <Td border={"0"}>Nuriddin</Td>
+                                        <Td border={"0"}>@kncoder</Td>
+                                        <Td border={"0"}>Quva</Td>
+                                        <Td border={"0"}>195432</Td>
+                                        <Td border={"0"}>3485734</Td>
+                                        <Td border={"0"}>4375345</Td>
                                     </Tr>
                                     <Tr>
-                                        <Td border={"0"}>UsdPrice</Td>
-                                        <Td border={"0"}>Name</Td>
-                                        <Td border={"0"}>Address</Td>
-                                        <Td border={"0"}>TelAndUsername</Td>
-                                        <Td border={"0"}>UsdTotal</Td>
-                                        <Td border={"0"}>UzsTotal</Td>
+                                        <Td border={"0"}>Nuriddin</Td>
+                                        <Td border={"0"}>@kncoder</Td>
+                                        <Td border={"0"}>Quva</Td>
+                                        <Td border={"0"}>195432</Td>
+                                        <Td border={"0"}>3485734</Td>
+                                        <Td border={"0"}>4375345</Td>
                                     </Tr>
                                 </Tbody>
                             </Table>
