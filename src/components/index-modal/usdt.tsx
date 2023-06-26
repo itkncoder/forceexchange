@@ -50,7 +50,7 @@ const Usdt = ({changer, onTop}: {changer: any, onTop?: boolean}) => {
 
             { onTop && <Box left={"0"} w={"100%"} zIndex={"2"} position={"absolute"} bottom={"-20px"} display={"flex"} justifyContent={"center"} alignItems={'center'}>
                 <Box onClick={() => changer((prev: boolean) => !prev)} cursor={"pointer"} shadow={"lg"} bg={"#394254"} w={"30px"} height={"30px"} display={"flex"} justifyContent={"center"} alignItems={'center'} rounded={"50%"} >
-                    <Image style={{width: "22px", height: "auto"}} width={100} height={100} alt="angledown" src={angledown}/>
+                    <Image style={{width: "20px", height: "auto"}} width={100} height={100} alt="angledown" src={angledown}/>
                 </Box>
             </Box>}
         </Box>
