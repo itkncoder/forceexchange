@@ -52,17 +52,6 @@ const Navbar = () => {
                         <NavbarItem link={"https://t.me/Feruz_769"} title={"Operator"} verify />
                     </Box>
                 </Box>
-                <Box my={{base: "10px", md: "0"}} display={"flex"} justifyContent={"start"} alignItems={"center"} gap={"40px"} >
-                    <Link href={"/login"}>
-                        <Box display={"flex"} justifyContent={"start"} gap={"8px"} alignItems={"center"} >
-                            <Image style={{width: "25px", height: "auto"}} width={300} height={200} alt='enter' priority src={enter} />
-                            <Text _hover={{color: "#b7b7b7"}} fontSize={{base: "16px", md: "20px"}} >Kirish</Text>
-                        </Box>
-                    </Link>
-                    <Link href={"/register"}>
-                        <Button transition={".3s all"} _hover={{bg: "linear-gradient(to right, #2F41DD, #103A7C)"}} bg={"linear-gradient(to right, #495BF9, #134189)"} borderRadius={"14px"} color={"white"} height={"fit-content"} pb={{base: "6px", md: "8px"}} pt={{base: "9px", md: "12px"}} fontSize={{base: "16px", md: "18px"}} >Ro'yhatdan o'tish</Button>
-                    </Link>
-                </Box>
             </Box>
         </Box>
     )

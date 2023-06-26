@@ -7,7 +7,7 @@ import { memo, useContext, useEffect } from "react"
 
 const Sum = ({changer, onTop}: {changer: any, onTop?: boolean}) => {
 
-    const { sum, setSum, usdNow, setUsdResult, sumResult, loaderUsd } = useContext(Context)
+    const { sum, setSum, usdNow, setUsdResult, select, sumResult, setSumResult, loaderUsd } = useContext(Context)
 
     useEffect(() => {
         setUsdResult(Number(sum) / Number(usdNow))
@@ -33,7 +33,12 @@ const Sum = ({changer, onTop}: {changer: any, onTop?: boolean}) => {
                 ?
                 <Box w={"50px"} display={"flex"} justifyContent={"end"} > 
                     <Skeleton startColor="rgba(256, 256, 256, .1)" endColor="rgba(256, 256, 256, .2)" rounded={"7px"} isLoaded={loaderUsd}>
-                        <NumberInput aria-valuemax={9999999999999} max={9999999999999} value={Number(sum).toLocaleString()} onChange={(e: any) => setSum(e)} variant={"unstyled"} min={Number(usdNow)} >
+                        <NumberInput
+                        value={ select ? Number(sumResult).toLocaleString() : Number(sumResult).toLocaleString()} 
+                        aria-valuemax={9999999999999} max={9999999999999} onChange={(e: any) => {
+                            setSum(e)
+                            setSumResult(e)
+                        }} variant={"unstyled"} min={Number(usdNow)} >
                             <NumberInputField w={"fit-content"} px={"0"} mr={"0"} pl={"0"} placeholder="0" textAlign={"end"} border={"0"} _focus={{border: "0", outline: "0"}} _hover={{bg: "transparent"}} height={"fit-content"} pb={"8px"} pt={"10px"} fontSize={{base: "20px", md: "24px"}} />
                         </NumberInput>
                     </Skeleton>

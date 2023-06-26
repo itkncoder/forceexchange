@@ -18,6 +18,8 @@ function App({ Component, pageProps }: any) {
 
     const [date] = useState(new Date())
 
+    const [select, setSelect] = useState(true)
+
     const [sum, setSum] = useState()
     const [usd, setUsd] = useState(1)
     const [loaderUsd, setLoaderUsd] = useState(false)
@@ -55,7 +57,7 @@ function App({ Component, pageProps }: any) {
             modalNow, setModalNow, timer, 
             setTimer, time, usdNow, sum, setSum, usd, setUsd, sumResult, 
             setSumResult, usdResult, setUsdResult, loaderUsd, date, fromTo, setFromTo,
-            address, setAddress, telOrUsername, setTelOrUsername, nameInput, setNameInput
+            address, setAddress, telOrUsername, setTelOrUsername, nameInput, setNameInput, select, setSelect
         }}>
             <ChakraProvider>
                 <Component {...pageProps} />
