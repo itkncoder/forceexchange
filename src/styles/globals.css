@@ -7,6 +7,7 @@
 }
 body {
     background: #0f1117 !important;
+    max-height: 100vh;
 }
 .gradient {
     background-image: url(../assets/bg.svg);
@@ -15,4 +16,15 @@ body {
 }
 .filter {
     backdrop-filter: blur(5px);
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
 }

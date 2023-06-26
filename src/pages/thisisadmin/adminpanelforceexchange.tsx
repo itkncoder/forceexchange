@@ -52,8 +52,8 @@ const Adminpanelforceexchange = () => {
             <Head>
                 <title>ForceExchange ADMIN</title>
             </Head>
-            <Box position={"relative"} minH={"100vh"} px={"20px"} >
-                <Box display={"flex"} justifyContent={"space-between"} gap={{base: "15px", md: "0"}} flexDirection={{base: "column", md: "row"}} alignItems={"center"} py={"25px"} >
+            <Box minH={"100vh"} px={"20px"} >
+                <Box position={"absolute"} left={"0"} px={"20px"} zIndex={200} w={"100%"} display={"flex"} justifyContent={"space-between"} gap={{base: "15px", md: "0"}} flexDirection={{base: "column", md: "row"}} alignItems={"center"} py={"25px"} >
                     <Link href={"/"}>
                         <Image style={{width: "175px", height: "auto"}} width={400} height={300} alt='logo' priority src={logo} />
                     </Link>
@@ -62,7 +62,7 @@ const Adminpanelforceexchange = () => {
                     </Box>
                 </Box>
                 <Box>
-                    <Box my={"10px"} >
+                    <Box pt={"80px"} w={"100%"} position={"absolute"} top={"0"} left={"0"} overflow={"auto"} maxH={"98vh"} my={"10px"} >
                         <TableContainer>
                             {
                                 !loader ?
