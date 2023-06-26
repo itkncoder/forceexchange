@@ -5,6 +5,7 @@ import logo from "@/assets/logo.svg"
 import Head from "next/head"
 import { ChangeEvent, useEffect, useState } from "react"
 import axios from "axios"
+import { CloseIcon } from "@chakra-ui/icons"
 
 const Adminpanelforceexchange = () => {
 
@@ -14,12 +15,19 @@ const Adminpanelforceexchange = () => {
     const [data, setData] = useState([])
 
     const [newPrice, setNewPrice] = useState<Number | String>()
-    
-    useEffect(() => {
+
+    const getOrders = () => {
         axios.get("https://forceexchangebackend.onrender.com/api/order/orders").then((res) => {
             setData(res.data.data)
             setLoader(false)
+            setTimeout(() => {
+                getOrders()
+            }, 5000)
         })
+    }
+    
+    useEffect(() => {
+        getOrders()
     }, [])
 
     const setPrice = () => {
@@ -28,6 +36,14 @@ const Adminpanelforceexchange = () => {
         }).then(() => {
             onClose()
             setNewPrice('')
+        })
+    }
+
+    const delOrder = (id: {id: string | number}) => {
+        axios.delete(`https://forceexchangebackend.onrender.com/api/order/orders${id}`).then(() => {
+            axios.get("https://forceexchangebackend.onrender.com/api/order/orders").then((res) => {
+                setData(res.data.data)
+            })
         })
     }
 
@@ -59,6 +75,7 @@ const Adminpanelforceexchange = () => {
                                             <Th color={"#f1f1f1"} borderColor={"gray"} >UsdPrice</Th>
                                             <Th color={"#f1f1f1"} borderColor={"gray"} >UsdTotal</Th>
                                             <Th color={"#f1f1f1"} borderColor={"gray"} >UzsTotal</Th>
+                                            <Th color={"#f1f1f1"} borderColor={"gray"} >Tools</Th>
                                         </Tr>
                                     </Thead>
                                     <Tbody >
@@ -71,6 +88,7 @@ const Adminpanelforceexchange = () => {
                                                     <Td border={"0"}>{i?.usdtPrice}</Td>
                                                     <Td border={"0"}>{i.usdtTotal}</Td>
                                                     <Td border={"0"}>{i.uzsTotal}</Td>
+                                                    <Td border={"0"}><CloseIcon cursor={"pointer"} onClick={() => delOrder(i._id)} /></Td>
                                                 </Tr>
                                             )
                                         }
@@ -89,7 +107,7 @@ const Adminpanelforceexchange = () => {
 
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
-                <ModalContent bg={"#0f1117"}>
+                <ModalContent rounded={"20px"} shadow={"2xl"} border={"3px solid rgba(256, 256, 256, 0.1)"} bg={"#0f1117"}>
                     <ModalHeader color={"white"}>Narxlarni o'zgartirish</ModalHeader>
                     <ModalCloseButton color={"white"} />
                     <ModalBody>
