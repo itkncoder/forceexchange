@@ -16,12 +16,12 @@ const Page4 = () => {
     const order = () => {
         if (address && nameInput && telOrUsername) {
             axios.post("https://forceexchangebackend.onrender.com/api/order/orders", {
-                usdtPrice: usdNow,
+                price: usdNow,
                 name: nameInput,
                 address: address,
                 telAndUsername: telOrUsername,
                 usdtTotal: fromTo ? usd : usdResult,
-                uzsTotal: fromTo ? sumResult : sum
+                uzsTotal: fromTo ? sumResult : sumResult
             }).then(() => {
                 setModalNow(0)
                 toast({

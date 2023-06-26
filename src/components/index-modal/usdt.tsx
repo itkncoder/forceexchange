@@ -42,6 +42,7 @@ const Usdt = ({changer, onTop}: {changer: any, onTop?: boolean}) => {
                 <Box display={"flex"} justifyContent={"end"}>
                     <Skeleton startColor="rgba(256, 256, 256, .1)" endColor="rgba(256, 256, 256, .2)" rounded={"7px"} isLoaded={loaderUsd}>
                         <NumberInput 
+                            width={"100px"}
                             onFocus={(e) => {
                                 setSelect(false)
                                 setUsd(usdResult)

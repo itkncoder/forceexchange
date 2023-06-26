@@ -16,7 +16,7 @@ const IndexModal = () => {
 
     return (
         <Box position={"relative"} zIndex={100} display={"flex"} justifyContent={"center"} alignItems={"center"} w={"100%"}  >
-            <Box display={"flex"} flexDirection={"column"} gap={"15px"} justifyContent={"center"} alignItems={"center"} maxW={"600px"} w={"100%"} shadow={"2xl"} py={{base: "20px", md: "30px"}} rounded={"25px"} px={{base: "15px", md: "25px"}} bg={"#1b1d27"}>
+            <Box display={"flex"} flexDirection={"column"} gap={"15px"} justifyContent={"center"} alignItems={"center"} maxW={"600px"} w={"100%"} shadow={"2xl"} py={{base: "35px", md: "30px"}} rounded={"25px"} px={{base: "15px", md: "25px"}} bg={"#1b1d27"}>
 
                 {
                     fromTo 

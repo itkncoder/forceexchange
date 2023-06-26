@@ -39,8 +39,8 @@ const Adminpanelforceexchange = () => {
         })
     }
 
-    const delOrder = (id: {id: string | number}) => {
-        axios.delete(`https://forceexchangebackend.onrender.com/api/order/orders${id}`).then(() => {
+    const delOrder = (id: any) => {
+        axios.delete(`https://forceexchangebackend.onrender.com/api/order/orders/${id}`).then(() => {
             axios.get("https://forceexchangebackend.onrender.com/api/order/orders").then((res) => {
                 setData(res.data.data)
             })
