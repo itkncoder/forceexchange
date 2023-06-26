@@ -34,7 +34,7 @@ function App({ Component, pageProps }: any) {
 
         const interval = setInterval(() => {
             setTimer((prev: number) => prev + 500)
-        }, 500)
+        }, 750)
 
         const timeout = setTimeout(() => {
             clearInterval(interval)
