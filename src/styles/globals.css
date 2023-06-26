@@ -1,22 +1,18 @@
 @import url("@/fonts/style.css");
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Mazzard";
 }
-
 body {
     background: #0f1117 !important;
 }
-
 .gradient {
     background-image: url(../assets/bg.svg);
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 .filter {
     backdrop-filter: blur(5px);
 }
