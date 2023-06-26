@@ -1,6 +1,7 @@
 import { Box, Button, CircularProgress, Input, Text } from "@chakra-ui/react"
 import Image from "next/image"
 import tether from "@/assets/tether.png"
+import sumImg from "@/assets/sum.png"
 import { useContext } from "react"
 import { Context } from "@/pages/_app"
 import { ChevronLeftIcon, CloseIcon } from "@chakra-ui/icons"
@@ -12,7 +13,7 @@ const Page2 = () => {
     "Iyul", "Avgust", "Sentyabr", "Oktyabr", "Noyabr", "Dekabr"
     ]
 
-    const { setModalNow, usdResult, date } = useContext(Context)
+    const { setModalNow, usdResult, date, fromTo, address, sumResult, setAddress, nameInput, setNameInput, telOrUsername, setTelOrUsername } = useContext(Context)
 
     const nextModal = () => {
         setModalNow((prev: number) => prev + 2)
@@ -42,27 +43,44 @@ const Page2 = () => {
                 </Box>
 
                 <Box mt={"15px"} w={"100%"} maxW={"580px"} position={"relative"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} px={"20px"} py={"15px"} bg={"#0f1117"} rounded={"25px"}>
-                    <Box display={"flex"} justifyContent={"start"} alignItems={"center"} gap={"15px"} >
-                        <Image style={{width: "50px", height: "auto"}} width={100} height={100} alt="humo" src={tether} />
-                        <Text fontSize={"24px"} >USDT</Text>
-                    </Box>
-                    <Box>
-                        <Text color={"#7e90ba"} fontSize={"22px"}>{Number(usdResult).toLocaleString()} USDT</Text>
-                    </Box>
+                    {
+                        !fromTo
+                        ?
+                        <Box display={"flex"} justifyContent={"start"} alignItems={"center"} gap={"15px"} >
+                            <Image style={{width: "50px", height: "auto"}} width={100} height={100} alt="humo" src={tether} />
+                            <Text fontSize={"24px"} >USDT</Text>
+                        </Box>
+                        :
+                        <Box display={"flex"} justifyContent={"start"} alignItems={"center"} gap={"15px"} >
+                            <Image style={{width: "50px", height: "auto"}} width={100} height={100} alt="humo" src={sumImg} />
+                            <Text fontSize={"24px"} >UZS</Text>
+                        </Box>
+                    }
+                    {
+                        !fromTo
+                        ?
+                        <Box>
+                            <Text color={"#7e90ba"} fontSize={"22px"}>{Number(usdResult).toLocaleString()} USDT</Text>
+                        </Box>
+                        :
+                        <Box>
+                            <Text color={"#7e90ba"} fontSize={"22px"}>{Number(sumResult).toLocaleString()} UZS</Text>
+                        </Box>
+                    }
                 </Box>
 
                 <Box mt={"8px"} w={"100%"} display={"flex"} flexDirection={"column"} alignItems={"start"} gap={"15px"} >
                     <Box w={"100%"} >
                         <Text color={"#7e90ba"} >TRC-20 Address yoki Binance PayID:</Text>
-                        <Input mt={"5px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}} variant={"filled"} placeholder="TRC-20 Address yoki Binance PayID..." />
+                        <Input value={address} onChange={(e) => setAddress(e.target.value)} mt={"5px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}} variant={"filled"} placeholder="TRC-20 Address yoki Binance PayID..." />
                     </Box>
                     <Box w={"100%"} >
                         <Text color={"#7e90ba"} >Ism Familiya:</Text>
-                        <Input mt={"5px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}} variant={"filled"} placeholder="Ism Familiya..." />
+                        <Input value={nameInput} onChange={(e) => setNameInput(e.target.value)} mt={"5px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}} variant={"filled"} placeholder="Ism Familiya..." />
                     </Box>
                     <Box w={"100%"} >
                         <Text color={"#7e90ba"} >Telefon raqam: <span style={{color: "#444e64"}} >(yoki telegram @username)</span></Text>
-                        <Input mt={"5px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}} variant={"filled"} placeholder="Telefon raqamingiz yoki telegram @username..." />
+                        <Input value={telOrUsername} onChange={(e) => setTelOrUsername(e.target.value)} mt={"5px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}} variant={"filled"} placeholder="Telefon raqamingiz yoki telegram @username..." />
                     </Box>
                 </Box>
 

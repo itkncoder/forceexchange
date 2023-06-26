@@ -8,9 +8,13 @@ export const Context = createContext<any>(null)
 
 function App({ Component, pageProps }: any) {
 
-    const router = useRouter()
+    const [fromTo, setFromTo] = useState<boolean>(false)
 
     const [usdNow, setUsdNow] = useState()
+
+    const [address, setAddress] = useState()
+    const [telOrUsername, setTelOrUsername] = useState()
+    const [nameInput, setNameInput] = useState()
 
     const [date] = useState(new Date())
 
@@ -50,7 +54,8 @@ function App({ Component, pageProps }: any) {
         <Context.Provider value={{
             modalNow, setModalNow, timer, 
             setTimer, time, usdNow, sum, setSum, usd, setUsd, sumResult, 
-            setSumResult, usdResult, setUsdResult, loaderUsd, date
+            setSumResult, usdResult, setUsdResult, loaderUsd, date, fromTo, setFromTo,
+            address, setAddress, telOrUsername, setTelOrUsername, nameInput, setNameInput
         }}>
             <ChakraProvider>
                 <Component {...pageProps} />

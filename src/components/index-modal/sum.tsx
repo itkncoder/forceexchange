@@ -30,7 +30,7 @@ const Sum = ({changer, onTop}: {changer: any, onTop?: boolean}) => {
                 ?
                 <Box display={"flex"} justifyContent={"end"} > 
                     <Skeleton startColor="rgba(256, 256, 256, .1)" endColor="rgba(256, 256, 256, .2)" rounded={"7px"} isLoaded={loaderUsd} w={"100%"}>
-                        <NumberInput value={Number(sum).toLocaleString()} onChange={(e: any) => setSum(e)} variant={"unstyled"} min={0} >
+                        <NumberInput max={999999999999999} value={Number(sum).toLocaleString()} onChange={(e: any) => setSum(e)} variant={"unstyled"} min={Number(usdNow)} >
                             <NumberInputField w={"fit-content"} px={"0"} mr={"0"} pl={"0"} placeholder="0" textAlign={"end"} border={"0"} _focus={{border: "0", outline: "0"}} _hover={{bg: "transparent"}} height={"fit-content"} pb={"8px"} pt={"10px"} fontSize={"24px"} />
                         </NumberInput>
                     </Skeleton>

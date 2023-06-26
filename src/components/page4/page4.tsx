@@ -1,13 +1,28 @@
 import { Box, Button, CircularProgress, Text, useToast } from "@chakra-ui/react"
 import Image from "next/image"
 import { ChevronLeftIcon, CopyIcon } from "@chakra-ui/icons"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { Context } from "@/pages/_app"
 import Progress from "../progress/progress"
+import card from "@/assets/card.png"
+import axios from "axios"
 
 const Page4 = () => {
 
-    const { setModalNow } = useContext(Context)
+    const { setModalNow, sum, usdNow, fromTo, sumResult, usdResult, usd, address, nameInput, telOrUsername } = useContext(Context)
+
+    const order = () => {
+        if (address && nameInput && telOrUsername) {
+            axios.post("https://forceexchangebackend.onrender.com/api/order/orders", {
+                usdtPrice: usdNow,
+                name: nameInput,
+                address: address,
+                telAndUsername: telOrUsername,
+                usdtTotal: fromTo ? usd : usdResult,
+                uzsTotal: fromTo ? sumResult : sum
+            })   
+        }
+    }
 
     const toast = useToast()
 
@@ -20,7 +35,7 @@ const Page4 = () => {
 
             <Box w={"100%"} height={"100vh"} zIndex={1} className="filter" position={"fixed"} left={"0"} top={"0"} bg={"rgba(0, 0, 0, 0.5)"} ></Box>
 
-            <Box position={"relative"} zIndex={"3"} display={"flex"} flexDirection={"column"} gap={"10px"} justifyContent={"center"} alignItems={"center"} maxW={"600px"} w={"100%"} shadow={"2xl"} py={"30px"} rounded={"25px"} px={"25px"} bg={"#1b1d27"}>
+            <Box position={"relative"} zIndex={"3"} display={"flex"} flexDirection={"column"} gap={"10px"} justifyContent={"center"} alignItems={"center"} maxW={"600px"} w={"100%"} shadow={"2xl"} py={"30px"} rounded={"25px"} px={"25px"} bg={"#1b1e27"}>
 
                 <Box onClick={prevModal} border={"1px solid #1a1a1a"} position={"absolute"} cursor={"pointer"} _hover={{bg: "rgba(0, 0, 0, 0.2)"}} bg={"rgba(0, 0, 0, 0.1)"} display={"flex"} justifyContent={"center"} alignItems={"center"} w={"35px"} h={"35px"} rounded={"8px"} top={"15px"} left={"20px"} >
                     <ChevronLeftIcon fontSize={"24px"} />
@@ -30,20 +45,18 @@ const Page4 = () => {
                     <Progress/>
                 </Box>
 
-                <Box w={"100%"} maxW={"380px"}>
-                    <Text textAlign={"center"} fontSize={"24px"} >
-                        Order tasdiqlanishi uchun quyidagi kartaga pul o’tkazing:
-                    </Text>
+                <Box w={"100%"} maxW={"360px"}>
+                    <Text textAlign={"center"} fontSize={"22px"} >Order tasdiqlanishi uchun quyidagi kartaga pul o’tkazing:</Text>
                 </Box>
 
                 <Box mt={"8px"} w={"100%"} display={"flex"} flexDirection={"column"} alignItems={"start"} gap={"15px"} >
                     <Box w={"100%"} my={"5px"}  display={"flex"} justifyContent={"center"} >
                         <Box>
-                            <Image style={{width: "350px", height: "auto", borderRadius: "25px"}} width={600} height={500} alt="qr" src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_OW25WoDBUuH2e52M2lNOdl1EZp3xgQwocBi0YaLkiniBwEQVAz-c5QzXA4kiHzCS-Q8&usqp=CAU"} />
+                            <Image priority style={{width: "380px", height: "auto", borderRadius: "25px"}} width={1500} height={1000} alt="qr" src={card} />
                         </Box>
                     </Box>
                     <Box w={"100%"} >
-                        <Text textAlign={"center"} fontSize={"20px"} >To’lov miqdori: 11 420 320.50 so’m</Text>
+                        <Text textAlign={"center"} fontSize={"20px"} >To’lov miqdori: {Number(sum).toLocaleString()} so’m</Text>
                     </Box>
                     <Box w={"100%"} >
                         <Box w={"100%"} >
@@ -68,7 +81,7 @@ const Page4 = () => {
                 </Box>
 
                 <Box mt={"15px"} display={"flex"} justifyContent={"center"} w={"100%"}>
-                    <Button _hover={{bg: "#1a233b"}} rounded={"15px"} px={"150px"} bg={"#232d45"} height={"fit-content"} pb={"15px"} pt={"20px"} color={"#0078ff"} fontSize={"18px"} >To’lov qildim</Button>
+                    <Button onClick={order} _hover={{bg: "#1a233b"}} rounded={"15px"} px={"150px"} bg={"#232d45"} height={"fit-content"} pb={"15px"} pt={"20px"} color={"#0078ff"} fontSize={"18px"} >To’lov qildim</Button>
                 </Box>
 
             </Box>

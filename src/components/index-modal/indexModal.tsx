@@ -8,8 +8,7 @@ import Sum from "./sum"
 
 const IndexModal = () => {
 
-    const { setModalNow, usdNow, loaderUsd } = useContext(Context)
-    const [fromTo, setFromTo] = useState<boolean>(false)
+    const { setModalNow, usdNow, loaderUsd, fromTo, setFromTo } = useContext(Context)
 
     const nextModal = () => {
         setModalNow((prev: number) => prev + 1)
