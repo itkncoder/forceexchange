@@ -2,7 +2,7 @@ import { Box, Button, CircularProgress, Input, Text } from "@chakra-ui/react"
 import Image from "next/image"
 import qr from "@/assets/qr.svg"
 import { ChevronLeftIcon, CopyIcon } from "@chakra-ui/icons"
-import { useContext } from "react"
+import { memo, useContext } from "react"
 import { Context } from "@/pages/_app"
 
 const Page3 = () => {
@@ -74,4 +74,4 @@ const Page3 = () => {
     )
 }
 
-export default Page3
+export default memo(Page3)
