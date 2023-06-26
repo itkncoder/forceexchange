@@ -111,7 +111,7 @@ const Page4 = () => {
                 </Box>
 
                 <Box mt={{base: "5px", md: "15px"}} display={"flex"} justifyContent={"center"} w={"100%"}>
-                    <Button onClick={order} _hover={{bg: "#1a233b"}} rounded={"15px"} px={"150px"} bg={"#232d45"} height={"fit-content"} pb={{base: "10px", md: "15px"}} pt={{base: "15px", md: "20px"}} color={"#0078ff"} fontSize={"18px"} >To’lov qildim</Button>
+                    <Button onClick={order} _hover={{bg: "linear-gradient(to right, #2F41DD, #103A7C)"}} bg={"linear-gradient(to right, #495BF9, #134189)"} rounded={"15px"} px={"150px"} height={"fit-content"} pb={{base: "10px", md: "15px"}} pt={{base: "15px", md: "20px"}} color={"white"} fontSize={"18px"} >To’lov qildim</Button>
                 </Box>
 
             </Box>

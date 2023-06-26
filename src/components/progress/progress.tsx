@@ -19,11 +19,10 @@ const Progress = () => {
             }, 1500)
             toast({
                 title: 'Berilgan vaqt tugadi!',
-                status: 'error',
+                status: 'info',
                 variant: "solid",
                 position: "top",
-                colorScheme: "blackAlpha",
-                duration: 3000,
+                duration: 2500,
                 isClosable: true,
             })
             setModalNow(0)

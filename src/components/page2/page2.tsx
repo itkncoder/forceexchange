@@ -72,20 +72,20 @@ const Page2 = () => {
                 <Box mt={"8px"} w={"100%"} display={"flex"} flexDirection={"column"} alignItems={"start"} gap={"15px"} >
                     <Box w={"100%"} >
                         <Text fontSize={{base: "14px", md: "16px"}} color={"#7e90ba"} >TRC-20 Address yoki Binance PayID:</Text>
-                        <Input fontSize={{base: "14px", md: "16px"}} value={address} onChange={(e) => setAddress(e.target.value)} mt={"5px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}} variant={"filled"} placeholder="TRC-20 Address yoki Binance PayID..." />
+                        <Input fontSize={{base: "14px", md: "16px"}} value={address} onChange={(e) => setAddress(e.target.value)} mt={"5px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}} variant={"filled"} placeholder="XXXXXXXXX" />
                     </Box>
                     <Box w={"100%"} >
                         <Text fontSize={{base: "14px", md: "16px"}} color={"#7e90ba"} >Ism Familiya:</Text>
-                        <Input fontSize={{base: "14px", md: "16px"}} value={nameInput} onChange={(e) => setNameInput(e.target.value)} mt={"5px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}} variant={"filled"} placeholder="Ism Familiya..." />
+                        <Input fontSize={{base: "14px", md: "16px"}} value={nameInput} onChange={(e) => setNameInput(e.target.value)} mt={"5px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}} variant={"filled"} placeholder="Abdullayev Feruz" />
                     </Box>
                     <Box w={"100%"} >
                         <Text fontSize={{base: "14px", md: "16px"}} color={"#7e90ba"} >Telefon raqam: <span style={{color: "#444e64"}} >(yoki telegram @username)</span></Text>
-                        <Input fontSize={{base: "14px", md: "16px"}} value={telOrUsername} onChange={(e) => setTelOrUsername(e.target.value)} mt={"5px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}} variant={"filled"} placeholder="Telefon raqamingiz yoki telegram @username..." />
+                        <Input fontSize={{base: "14px", md: "16px"}} value={telOrUsername} onChange={(e) => setTelOrUsername(e.target.value)} mt={"5px"} rounded={"15px"} py={"15px"} height={"fit-content"} bg={"#0b1119"} _hover={{bg: "#0b1119"}} variant={"filled"} placeholder="+998 xx  xxx-xxx-xxx" />
                     </Box>
-                </Box>
+                </Box>  
 
                 <Box mt={"5px"} display={"flex"} justifyContent={"center"} w={"100%"}>
-                    <Button onClick={nextModal} _hover={{bg: "#1a233b"}} rounded={"15px"} px={"150px"} bg={"#232d45"} height={"fit-content"} pb={{base: "10px", md: "15px"}} pt={{base: "15", md: "20px"}} color={"white"} fontSize={"18px"} >To’lov qilish</Button>
+                    <Button onClick={nextModal} _hover={{bg: "linear-gradient(to right, #2F41DD, #103A7C)"}} bg={"linear-gradient(to right, #495BF9, #134189)"} rounded={"15px"} px={"150px"} height={"fit-content"} pb={{base: "10px", md: "15px"}} pt={{base: "15", md: "20px"}} color={"white"} fontSize={"18px"} >To’lov qilish</Button>
                 </Box>
 
             </Box>

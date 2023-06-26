@@ -43,7 +43,7 @@ const IndexModal = () => {
                 </Box>
 
                 <Box mt={{md: "5px"}} w={"100%"}>
-                    <Button _hover={{bg: "#1a233b"}} rounded={"15px"} w={"100%"} bg={"#232d45"} height={"fit-content"} pb={{base: "10px", md: "15px"}} pt={{base: "15px", md: "20px"}} color={"white"} fontSize={"18px"} onClick={nextModal} >Sotib olish</Button>
+                    <Button _hover={{bg: "linear-gradient(to right, #2F41DD, #103A7C)"}} bg={"linear-gradient(to right, #495BF9, #134189)"} rounded={"15px"} w={"100%"} height={"fit-content"} pb={{base: "10px", md: "15px"}} pt={{base: "15px", md: "20px"}} color={"white"} fontSize={"18px"} onClick={nextModal} >Sotib olish</Button>
                 </Box>
 
             </Box>
