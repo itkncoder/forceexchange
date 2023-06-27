@@ -39,7 +39,7 @@ const Navbar = () => {
     return (
         <Box position={"absolute"} w={"100%"} left={"0"} top={"0"} py={{base: "30px", md: "60px"}} >
             <Box px={{base: "10px", md: "0"}} flexDirection={{base: "column", md: "row"}} display={"flex"} justifyContent={"space-between"} alignItems={"center"} >
-                <Box display={"flex"} flexDirection={{base: "column", md: "row"}} w={"100%"} px={{base: "15px", md: "0"}} alignItems={"center"} gap={"75px"} >
+                <Box display={"flex"} flexDirection={{base: "column", md: "row"}} w={"100%"} px={{base: "15px", md: "0"}} alignItems={"center"} justifyContent={"space-between"} >
                     <Box display={{base: "none", md: "block"}}>
                         <Link href={"/"}>
                             <Image style={{width: "175px", height: "auto"}} width={300} height={200} alt='logo' priority src={logo} />
