@@ -51,8 +51,8 @@ const Navbar = () => {
                                 <Image style={{width: "135px", height: "auto"}} width={300} height={200} alt='logo' priority src={logo} />
                             </Link>
                         </Box>
-                        <Box position={"absolute"} zIndex={10} top={"20px"} right={"20px"} >
-                            <Button onClick={onOpen} bg={"rgba(256, 256, 256, 0.05)"}>
+                        <Box position={"absolute"} zIndex={1} top={"20px"} right={"20px"} >
+                            <Button _hover={{bg: "rgba(256, 256, 256, 0.06)"}} onClick={onOpen} bg={"rgba(256, 256, 256, 0.05)"}>
                                 <HamburgerIcon fontSize={"20px"} color={"white"}/>
                             </Button>
                         </Box>

@@ -58,7 +58,7 @@ const Usdt = ({changer, onTop}: {changer: any, onTop?: boolean}) => {
                                 setSumResult(Number(usd) * Number(usdNow))
                             }} 
                         mr={"0"} pl={"0"} variant={"unstyled"} w={"fit-content"} min={0} >
-                            <NumberInputField w={"fit-content"} px={"0"} mr={"0"} pl={"0"} placeholder="0" textAlign={"end"} border={"0"} _focus={{border: "0", outline: "0"}} _hover={{bg: "transparent"}} height={"fit-content"} pb={"8px"} pt={"10px"} fontSize={{base: "20px", md: "24px"}} />
+                            <NumberInputField w={"150px"} px={"0"} mr={"0"} pl={"0"} placeholder="0" textAlign={"end"} border={"0"} _focus={{border: "0", outline: "0"}} _hover={{bg: "transparent"}} height={"fit-content"} pb={"8px"} pt={"10px"} fontSize={{base: "20px", md: "24px"}} />
                         </NumberInput>
                     </Skeleton>
                 </Box>

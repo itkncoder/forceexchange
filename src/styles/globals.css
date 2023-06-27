@@ -8,6 +8,7 @@
 body {
     background: #0f1117 !important;
     max-height: 100vh;
+    overflow-y: hidden !important;
 }
 .gradient {
     background-image: url(../assets/bg.svg);

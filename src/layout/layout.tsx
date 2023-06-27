@@ -1,7 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import Head from 'next/head'
 import React, { memo } from 'react'
-import logo from "@/assets/logo.svg"
 
 const Layout = ({children}: {children: JSX.Element}) => {
     return (
@@ -16,7 +15,7 @@ const Layout = ({children}: {children: JSX.Element}) => {
                 <meta name="robots" content="index, follow"/>
                 <meta name="author" content="blocktechno" />
 
-                <link rel="shortcut icon" href={"https://raw.githubusercontent.com/itkncoder/forceexchange/f5b3d0b29f6717b40187e5094c60ffa62bd76020/src/assets/logo.svg?token=AYLJ6GH3WJ7JRTNELKYJBDTETHNCM"} type="image/image" />
+                <link rel="shortcut icon" href={"https://i.postimg.cc/28Cvr097/logo-1.png"} type="image/image" />
             </Head>
             <Box position={"relative"} minH={"100vh"} maxW={"1320px"} mx={"auto"} >
                 {children}

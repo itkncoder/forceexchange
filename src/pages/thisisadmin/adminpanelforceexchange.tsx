@@ -53,7 +53,7 @@ const Adminpanelforceexchange = () => {
                 <title>ForceExchange ADMIN</title>
             </Head>
             <Box minH={"100vh"} px={"20px"} >
-                <Box position={"absolute"} left={"0"} px={"20px"} zIndex={200} w={"100%"} display={"flex"} justifyContent={"space-between"} gap={{base: "15px", md: "0"}} flexDirection={{base: "column", md: "row"}} alignItems={"center"} py={"25px"} >
+                <Box position={"absolute"} left={"0"} px={"20px"} zIndex={200} w={"100%"} display={"flex"} justifyContent={"space-between"} gap={{base: "15px", md: "0"}} alignItems={"center"} py={"25px"} >
                     <Link href={"/"}>
                         <Image style={{width: "175px", height: "auto"}} width={400} height={300} alt='logo' priority src={logo} />
                     </Link>
