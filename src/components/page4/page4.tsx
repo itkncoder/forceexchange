@@ -76,7 +76,7 @@ const Page4 = () => {
                         </Box>
                     </Box>
                     <Box w={"100%"} >
-                        <Text textAlign={"center"} fontSize={{base: "18px", md: "20px"}} >To’lov miqdori: {Number(sum).toLocaleString()} so’m 
+                        <Text textAlign={"center"} fontSize={{base: "18px", md: "20px"}} >To’lov miqdori: {Number(sumResult).toLocaleString()} so’m 
                         <span><CopyIcon onClick={() => {
                                 navigator.clipboard.writeText(Number(sum).toLocaleString())
                                 toast({

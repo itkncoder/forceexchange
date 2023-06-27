@@ -35,7 +35,7 @@ const Progress = () => {
                 <Text fontSize={{base: "16px", md: "18px"}}>Qolgan vaqt:</Text>
                 <Text fontSize={{base: "14px", md: "16px"}} color={"#7e90ba"} >{14 - new Date(timer).getMinutes()}:{60 - new Date(timer).getSeconds()}</Text>
             </Box>
-            <CircularProgress trackColor="transparent" value={timer} max={225000 * 4} color='#0066CC' thickness='12px'/>
+            <CircularProgress transform={"rotateY(180deg)"} trackColor="#0066CC" value={timer} max={225000 * 4} border={"1px solid #1B1E27"} outline={"1px solid #1B1E27"} color='#1B1E27' thickness='12px'/>
         </Box>
     )
 }
