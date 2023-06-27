@@ -40,7 +40,7 @@ const Sum = ({changer, onTop}: {changer: any, onTop?: boolean}) => {
                             setSum(e)
                             setSumResult(e)
                         }} variant={"unstyled"} min={Number(usdNow)} >
-                            <NumberInputField w={"200px"} px={"0"} mr={"0"} pl={"0"} placeholder="0" textAlign={"end"} border={"0"} _focus={{border: "0", outline: "0"}} _hover={{bg: "transparent"}} height={"fit-content"} pb={"8px"} pt={"10px"} fontSize={{base: "20px", md: "24px"}} />
+                            <NumberInputField w={{base: "200px", md: "fit-content"}} px={"0"} mr={"0"} pl={"0"} placeholder="0" textAlign={"end"} border={"0"} _focus={{border: "0", outline: "0"}} _hover={{bg: "transparent"}} height={"fit-content"} pb={"8px"} pt={"10px"} fontSize={{base: "20px", md: "24px"}} />
                         </NumberInput>
                     </Skeleton>
                 </Box>
