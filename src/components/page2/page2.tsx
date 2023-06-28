@@ -13,7 +13,7 @@ const Page2 = () => {
     "Iyul", "Avgust", "Sentyabr", "Oktyabr", "Noyabr", "Dekabr"
     ]
 
-    const { setModalNow, usdResult, date, fromTo, address, sumResult, setAddress, nameInput, setNameInput, telOrUsername, setTelOrUsername } = useContext(Context)
+    const { setModalNow, setSumResult, usd, usdNow, usdResult, date, fromTo, address, sumResult, setAddress, nameInput, setNameInput, telOrUsername, setTelOrUsername } = useContext(Context)
 
     const nextModal = () => {
         setModalNow((prev: number) => prev + 2)
@@ -21,6 +21,7 @@ const Page2 = () => {
 
     const prevModal = () => {
         setModalNow((prev: number) => prev - 1)
+        setSumResult(Number(usd) * Number(usdNow))
     }
 
     return (

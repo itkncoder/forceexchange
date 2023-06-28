@@ -7,7 +7,7 @@ import { memo, useContext, useEffect } from "react"
 
 const Sum = ({changer, onTop}: {changer: any, onTop?: boolean}) => {
 
-    const { sum, setSum, usdNow, setUsdResult, select, sumResult, setSumResult, loaderUsd } = useContext(Context)
+    const { sum, modalNow, setSum, usd, usdNow, setUsdResult, select, sumResult, setSumResult, loaderUsd } = useContext(Context)
 
     useEffect(() => {
         setUsdResult(Number(sum) / Number(usdNow))
@@ -15,7 +15,7 @@ const Sum = ({changer, onTop}: {changer: any, onTop?: boolean}) => {
             setSum(999999999999)
             setSumResult(999999999999)
         }
-    }, [sum, usdNow])
+    }, [sum, usdNow, modalNow])
 
     return (
         <Box shadow={"2xl"} border={"3px solid #1D2533"} w={"100%"} maxW={"580px"} position={"relative"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} px={{base: "15px", md: "35px"}} height={{base: "90px", md: "130px"}} bg={"#1b1f27"} rounded={"25px"}>

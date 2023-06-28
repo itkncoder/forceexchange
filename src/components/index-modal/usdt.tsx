@@ -7,14 +7,14 @@ import { Context } from "@/pages/_app"
 
 const Usdt = ({changer, onTop}: {changer: any, onTop?: boolean}) => {
 
-    const { usd, setUsd, usdResult, select, setSelect, setUsdResult, setSumResult, usdNow, loaderUsd } = useContext(Context)
+    const { usd, setUsd, usdResult, modalNow, setModalNow, select, setSelect, setUsdResult, setSumResult, usdNow, loaderUsd } = useContext(Context)
 
     useEffect(() => {
         setSumResult(Number(usd) * Number(usdNow))
         if (usd > 99999999) {
             setUsd(99999999)
         }
-    }, [usd, usdNow])
+    }, [usd, usdNow, modalNow, setModalNow])
 
     return (
         <Box w={"100%"} maxW={"580px"} position={"relative"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} px={{base: "15px", md: "35px"}} height={{base: "90px", md: "130px"}} bg={"#0f1117"} border={"2px solid transparent"} rounded={"25px"}>
